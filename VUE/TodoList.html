@@ -13,20 +13,20 @@
         <input v-model="inputValue">
         <button @click="handleSubmit">submit</button>
         <ul>
-            <li v-for="(item, index) of list" :key="index">{{item}}</li>
+            <item-list v-for="(item, index) of list" :key="index" :content="item">
+            </item-list>
         </ul>
     </div>
     <script>
+        Vue.component('item-list', {
+            props: ['content'],
+            template: '<li>{{content}}</li>',
+        });
         new Vue({
             el: '#root',
             data: {
                 inputValue: '',
                 list: [],
-            },
-            computed: {
-                todoOne: function () {
-                  return this.inputValue;  
-                },
             },
             methods: {
                 handleSubmit: function () {
