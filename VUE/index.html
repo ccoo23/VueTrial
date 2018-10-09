@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VUE First Try</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1 @click="handleClick">{{msg}}</h1>
+        <h2 :title="title" v-show="show">{{number}}</h2>
+        姓: <input v-model="firstName">
+        名: <input v-model="lastName">
+        <h3>{{fullName}}</h3>
+        <div>times of change: {{count}}</div>
+        <button @click="showOrHide">toggle</button>
+        <ul>
+            <li v-for="(item, index) of list" :key="index">{{item}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                msg: 'hello',
+                number: 123,
+                title: 'this is number',
+                content: 'this is content',
+                firstName: '',
+                lastName: '',
+                count: 0,
+                show: true,
+                list: [1, 2, 3],
+            },
+            computed: {
+                fullName: function () {
+                    return this.firstName + ' ' + this.lastName;
+                },
+            },
+            watch: {
+                fullName: function () {
+                    this.count++;
+                },
+            },
+            methods: {
+                handleClick: function () {
+                    this.msg = 'world';
+                },
+                showOrHide: function () {
+                    this.show = !this.show;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
