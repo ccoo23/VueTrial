@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <todo-header></todo-header>
-    <div class="content">
+    <div class="content"  @keyup.enter="pressEnter" >
       <span class="empty"></span>
       <input class="input" v-model="inputValue"/>
       <input type="submit" class="submit" @click="handleSubmit" />
@@ -45,6 +45,14 @@ export default {
     },
     handleDelete(index) {
       this.list.splice(index, 1);
+    },
+    pressEnter() {
+      if (this.inputValue === '') {
+        alert('please input something');
+      } else {
+        this.list.push(this.inputValue);
+      }
+      this.inputValue = '';
     },
   },
 };
