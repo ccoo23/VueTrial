@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <div>
-      <input v-model="inputValue"/>
-      <button @click="handleSubmit">submit</button>
+  <div class="main">
+    <todo-header></todo-header>
+    <div class="content">
+      <span class="empty"></span>
+      <input class="input" v-model="inputValue"/>
+      <input type="submit" class="submit" @click="handleSubmit" />
+      <span class="empty"></span>
     </div>
-    <ul>
+    <ul class="list">
       <todo-item v-for="(item, index) of list"
         :key="index"
         :content="item"
@@ -16,30 +19,37 @@
 </template>
 
 <script>
-import TodoItem from "./components/TodoItem";
+import TodoItem from './components/TodoItem';
+import Header from './components/Header';
 
 export default {
   components: {
-    "todo-item": TodoItem
+    'todo-item': TodoItem,
+    'todo-header': Header,
   },
   data() {
-    //data是一个函数，返回值是数据,要这么写
+    //  data是一个函数，返回值是数据,要这么写
     return {
-      inputValue: "",
-      list: []
+      inputValue: '',
+      list: [],
     };
   },
   methods: {
-    handleSubmit () {
-      this.list.push(this.inputValue);
+    handleSubmit() {
+      if (this.inputValue === '') {
+        alert('please input something');
+      } else {
+        this.list.push(this.inputValue);
+      }
       this.inputValue = '';
     },
-    handleDelete (index) {
+    handleDelete(index) {
       this.list.splice(index, 1);
     },
-  }
+  },
 };
 </script>
 
 <style>
+  @import './assets/styles/main.css';
 </style>
