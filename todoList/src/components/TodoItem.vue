@@ -1,5 +1,7 @@
 <template>
-    <li class="item" @click="handleClick">{{content}} {{index}}</li>
+    <li class="item" style="list-style-type:none;" >
+      <input type="button" class="todo" @click="handleClick" >
+      {{content}} {{index}}</li>
 </template>
 
 <script>
