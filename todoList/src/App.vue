@@ -15,17 +15,20 @@
         @delete="handleDelete">
       </todo-item>
     </ul>
+    <todo-buttons></todo-buttons>
   </div>
 </template>
 
 <script>
 import TodoItem from './components/TodoItem';
 import Header from './components/Header';
+import Buttons from './components/Buttons';
 
 export default {
   components: {
     'todo-item': TodoItem,
     'todo-header': Header,
+    'todo-buttons': Buttons,
   },
   data() {
     //  data是一个函数，返回值是数据,要这么写
