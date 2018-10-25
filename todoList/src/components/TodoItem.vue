@@ -4,7 +4,8 @@
   <div class="column">
     <input type="button" class="todo" value="DONE" @click="handleClick" >
     <input type="button" class="todo" value="DEL" @click="handleDELETE" >
-    <li class="item" :class="{ done: isActive }" style="list-style-type:none;" >{{index}}   {{content}}</li>
+    <li class="item" :class="{ done: isActive }"
+      style="list-style-type:none;" >{{index}}   {{content}}</li>
   </div>
   <span class="empty1"></span>
 </div>
@@ -12,7 +13,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isActive: false,
     };
@@ -21,6 +22,7 @@ export default {
   methods: {
     handleClick() {
       this.isActive = !this.isActive;
+      this.$emit('done', this.index);
     },
     handleDELETE() {
       this.$emit('delete', this.index);

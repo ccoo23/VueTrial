@@ -1,5 +1,6 @@
 import React from 'react';
 import config from './config.json';
+import styles from './Greeter.css';//导入
 // const config = require('./config.json');
 
 // module.exports = function() {
@@ -8,7 +9,7 @@ import config from './config.json';
 //   return greet;
 // };
 const Greeter = () => (
-  <div>
+  <div className={styles.root}>
     {config.greetText}
   </div>
 );

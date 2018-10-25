@@ -1,0 +1,21 @@
+{
+  "name": "webpacktodo",
+  "version": "1.0.0",
+  "description": "todolist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jokcy"
+  ],
+  "author": "vito",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.5"
+  }
+}
