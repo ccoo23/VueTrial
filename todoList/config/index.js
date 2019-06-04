@@ -1,4 +1,5 @@
 'use strict'
+/* eslint-disable */
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
 
@@ -10,7 +11,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // '/api': {
+      //   target: 'http://10.72.0.83:8088', // 这个是你要代理的地址(开发阶段接口地址)
+      //   changeOrigin: true,//跨域需要加上这个
+      //   pathRewrite: {
+      //     '^/api': '/' //这里的/ 其实就是代表根, 可以理解为用/ api代表target里的地址
+      //   }
+      // }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
