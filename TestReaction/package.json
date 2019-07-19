@@ -1,0 +1,14 @@
+{
+  "name": "testreaction",
+  "version": "1.0.0",
+  "description": "test-your-reaction",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "vito",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
